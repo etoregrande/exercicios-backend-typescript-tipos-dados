@@ -44,10 +44,10 @@ const filtrarUsuarios = (
     status: boolean
 }[] => {
     const resultado = listaUsuarios.filter((usuario) => {
-        return usuario.nome === nome;
+        return usuario.nome.toLowerCase().includes(nome.toLowerCase())
     })
 
     return resultado;
 }
 
-console.log(filtrarUsuarios(usuarios02, `G55uido`));
+console.log(filtrarUsuarios(usuarios02, `gui`));
