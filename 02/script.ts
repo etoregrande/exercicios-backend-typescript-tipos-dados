@@ -32,18 +32,22 @@ const usuarios02 = [
 ]
 
 const filtrarUsuarios = (
-    listaUsuarios: { nome: string, idade: number, status: boolean }[],
+    listaUsuarios: {
+        nome: string,
+        idade: number,
+        status: boolean
+    }[],
     nome: string
-) => {
+): {
+    nome: string,
+    idade: number,
+    status: boolean
+}[] => {
     const resultado = listaUsuarios.filter((usuario) => {
         return usuario.nome === nome;
     })
 
-    if (!resultado) {
-        return `Usuário não encontrado`
-    }
-
     return resultado;
 }
 
-console.log(filtrarUsuarios(usuarios02, `Guido`));
+console.log(filtrarUsuarios(usuarios02, `G55uido`));
